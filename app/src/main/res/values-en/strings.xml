@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">BTRedirect</string>
+    <string name="eyebrow">AUDIO TOOL</string>
+    <string name="screen_title">Bluetooth mic routing</string>
+    <string name="subtitle">Keep your Bluetooth headset microphone available for WO Mic</string>
+    <string name="checking_audio">Checking Bluetooth audio…</string>
+    <string name="connect_then_enable">Connect your headset, then enable routing.</string>
+    <string name="enable_route">Enable Bluetooth mic routing</string>
+    <string name="clear_route">Stop and clear routing</string>
+    <string name="reconnect_title">Not working? Reconnect your Bluetooth device</string>
+    <string name="reconnect_body">If “Bluetooth SCO is ready” is not shown, disconnect and reconnect your headset. Confirm that call audio is enabled, then enable routing again. Media-only audio (A2DP) cannot use the headset microphone.</string>
+    <string name="details">Connection details</string>
+    <string name="sco_ready">Bluetooth SCO is ready</string>
+    <string name="ready_detail">Start WO Mic now and keep this app running. The headset microphone route will remain active.</string>
+    <string name="connecting">Connecting headset call audio…</string>
+    <string name="connecting_detail">Waiting for the Bluetooth SCO endpoint. Please wait.</string>
+    <string name="not_connected">Bluetooth microphone not connected</string>
+    <string name="not_connected_detail">If it is connected but still does not work, reconnect the Bluetooth device and try again.</string>
+    <string name="request_state">This app’s request: %1$s</string>
+    <string name="accepted">Accepted</string>
+    <string name="not_enabled">Not enabled</string>
+    <string name="silent_playback">Silent communication playback: %1$s</string>
+    <string name="running">Running</string>
+    <string name="not_running">Not running</string>
+    <string name="audio_mode">Audio mode: %1$s</string>
+    <string name="communication_mode">Communication</string>
+    <string name="normal_mode">Normal</string>
+    <string name="current_device">Current communication device: %1$s</string>
+    <string name="available_devices">Available communication devices:</string>
+    <string name="none">None</string>
+    <string name="bluetooth_sco">Bluetooth SCO</string>
+    <string name="ble_headset">Bluetooth LE headset</string>
+    <string name="speaker">Phone speaker</string>
+    <string name="earpiece">Phone earpiece</string>
+    <string name="device_type">Device type %1$d</string>
+    <string name="device_description">%1$s · %2$s</string>
+</resources>

@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">蓝牙麦克风路由</string>
+    <string name="eyebrow">音频工具</string>
+    <string name="screen_title">蓝牙麦克风路由</string>
+    <string name="subtitle">为 WO Mic 保持蓝牙耳机的通话麦克风通道</string>
+    <string name="checking_audio">正在检查蓝牙音频…</string>
+    <string name="connect_then_enable">请先连接耳机，然后启用路由。</string>
+    <string name="enable_route">启用蓝牙麦克风路由</string>
+    <string name="clear_route">停止并清除路由</string>
+    <string name="reconnect_title">没有生效？请重新连接蓝牙设备</string>
+    <string name="reconnect_body">如果没有显示“蓝牙 SCO 已就绪”，请断开耳机并重新连接，确认已打开“通话音频”，再点击启用。仅媒体音频（A2DP）不能使用耳机麦克风。</string>
+    <string name="details">连接详情</string>
+    <string name="sco_ready">蓝牙 SCO 已就绪</string>
+    <string name="ready_detail">现在启动 WO Mic，并保持本应用运行。耳机麦克风路由会持续维持。</string>
+    <string name="connecting">正在连接耳机通话音频…</string>
+    <string name="connecting_detail">正在等待蓝牙 SCO 端点出现，请稍候。</string>
+    <string name="not_connected">尚未连接蓝牙麦克风</string>
+    <string name="not_connected_detail">若已连接但仍未生效，请重新连接蓝牙设备后再次启用。</string>
+    <string name="request_state">本应用请求：%1$s</string>
+    <string name="accepted">已接受</string>
+    <string name="not_enabled">未启用</string>
+    <string name="silent_playback">静音通信播放：%1$s</string>
+    <string name="running">运行中</string>
+    <string name="not_running">未运行</string>
+    <string name="audio_mode">音频模式：%1$s</string>
+    <string name="communication_mode">通信模式</string>
+    <string name="normal_mode">普通模式</string>
+    <string name="current_device">当前通信设备：%1$s</string>
+    <string name="available_devices">可用通信设备：</string>
+    <string name="none">无</string>
+    <string name="bluetooth_sco">蓝牙 SCO</string>
+    <string name="ble_headset">蓝牙 LE 耳机</string>
+    <string name="speaker">手机扬声器</string>
+    <string name="earpiece">手机听筒</string>
+    <string name="device_type">设备类型 %1$d</string>
+    <string name="device_description">%1$s · %2$s</string>
+</resources>

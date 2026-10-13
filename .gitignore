@@ -2,4 +2,8 @@
 build/
 app/build/
 local.properties
+release.properties
+*.keystore
+*.jks
+dist/
 

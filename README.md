@@ -1,41 +1,37 @@
-# BT Mic Route
+# BTRedirect
 
-一个只负责维持 Android 通话音频路由的小工具：让另一应用（本项目实际验证为 **WO Mic**）能从蓝牙耳机的 HFP/SCO 麦克风取音。
+An Android helper that keeps a Bluetooth headset's HFP/SCO microphone route alive for another app, verified with WO Mic.
 
-## 已验证组合
+## What it does
 
-- 手机：Xiaomi 23049RAD8C（marble），Android 15 / HyperOS 3.0.5.0
-- 蓝牙耳机：HUAWEI FreeBuds 6i
-- 录音应用：WO Mic（`com.wo.voice2`）
-- 结果：WO Mic 的实际输入设备为 `AUDIO_DEVICE_IN_BLUETOOTH_SCO_HEADSET`。
+- Requests a Bluetooth communication device on Android 12 and above.
+- Keeps a silent `USAGE_VOICE_COMMUNICATION` playback stream active so Android does not reclaim the SCO route.
+- Does **not** record, store, or transmit microphone audio. The application does not request `RECORD_AUDIO`.
+- Uses Material You dynamic colour when the device supports it.
+- Supports Simplified Chinese and English, automatically selected from the device language.
 
-## 日常使用
+## Use
 
-1. 连接蓝牙耳机，并确保系统蓝牙设置中已启用其“通话音频”。
-2. 打开 **BT Mic Route**，点击 **Request Bluetooth route**。
-3. 等待界面同时显示：
-   - `Requested by this app: true`
-   - `Silent communication playback: true`
-   - `Audio mode: MODE_IN_COMMUNICATION`
-   - `Current communication device: ... BLUETOOTH_SCO ...`
-4. 保持本应用运行，打开并启动 WO Mic；随后按原有方式在电脑端连接 WO Mic。
-5. 用完后，先在 WO Mic 停止采集，再回到本应用点 **Clear my request**。
+1. Connect the headset and make sure its **Call audio** setting is enabled.
+2. Open BTRedirect and choose **Enable Bluetooth mic routing**.
+3. Wait for **Bluetooth SCO is ready**.
+4. Keep BTRedirect running, then start WO Mic and connect it on the PC as usual.
+5. When finished, stop WO Mic first, then choose **Stop and clear routing** in BTRedirect.
 
-## 不能做的事
+If the route does not become ready, reconnect the Bluetooth headset and try again. Media-only A2DP audio cannot provide the headset microphone.
 
-- 不要在 WO Mic 使用期间点清除、强行停止或杀掉本应用；它负责持续维持蓝牙通话音频路由。
-- 仅连接 A2DP（媒体音频）不够；必须让 `BLUETOOTH_SCO` / 通话音频端点可用。
-- 本工具不采集、保存或转发麦克风声音，也没有申请 `RECORD_AUDIO` 权限；它播放全零的通话用途 PCM，以防系统在没有活跃通信流时回收 SCO 路由。
+## Build
 
-## 构建
-
-需要 JDK 17 和 Android SDK。项目使用 Android Gradle Plugin 8.10.1，`local.properties` 指向本机 SDK。
+Install JDK 17 and Android SDK Platform 34 or newer. Create `local.properties` locally with an `sdk.dir` entry, then build with Gradle:
 
 ```powershell
-& 'C:\Users\Lenovo\.gradle\wrapper\dists\gradle-8.12-all\ejduaidbjup3bmmkhw3rie4zb\gradle-8.12\bin\gradle.bat' --no-daemon :app:assembleDebug
+gradle :app:assembleDebug
 ```
 
-生成的 APK 位于 `app\build\outputs\apk\debug\app-debug.apk`。
+The generated APK is under `app/build/outputs/apk/`.
 
-完整的设计依据、排障步骤及可移植性约束见上级目录的
-[`执行方案_安卓蓝牙耳机麦克风到WO_Mic.md`](../执行方案_安卓蓝牙耳机麦克风到WO_Mic.md)。
+## Verified setup
+
+- Xiaomi 23049RAD8C (Android 15 / HyperOS 3.0.5.0)
+- HUAWEI FreeBuds 6i
+- WO Mic (`com.wo.voice2`)
